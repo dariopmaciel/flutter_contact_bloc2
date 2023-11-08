@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         '/bloc/example/': (_) => BlocProvider(
           // O castate notation '...add' propicia iniciar um evento 'ExampleFindNameEvent'
               create: (_) => ExampleBloc()..add(ExampleFindNameEvent()),
-              child: const BlocExample(),
+              child:  BlocExample(),
             ),
       },
     );
