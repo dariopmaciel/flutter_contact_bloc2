@@ -49,7 +49,8 @@ class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
       ExampleAddNameEvent event, Emitter<ExampleState> emit) {
     final stateExample = state;
     if (stateExample is ExampleStateData) {
-      final names = [...stateExample.nomes, event.casa];
+      final names = [...stateExample.nomes, event.addnome];
+
       // names.add(event.name); // Adicione o novo nome à lista
       emit(ExampleStateData(
           nomes: names)); // Emita o novo estado com o nome adicionado

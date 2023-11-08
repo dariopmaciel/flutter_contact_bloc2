@@ -12,9 +12,9 @@ class ExampleRemoveNameEvent extends ExampleEvent {
 }
 
 class ExampleAddNameEvent extends ExampleEvent {
-  String casa;
+  String addnome;
   ExampleAddNameEvent({
-    required this.casa,
+    required this.addnome,
   });
   
 }

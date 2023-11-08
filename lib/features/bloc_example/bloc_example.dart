@@ -12,7 +12,7 @@ class BlocExample extends StatelessWidget {
       appBar: AppBar(title: const Text('Bloc Example')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read<ExampleBloc>().add(ExampleAddNameEvent(casa: "FOI"));
+          context.read<ExampleBloc>().add(ExampleAddNameEvent(addnome: "FOI"));
         },
         child: const Icon(Icons.add),
       ),
