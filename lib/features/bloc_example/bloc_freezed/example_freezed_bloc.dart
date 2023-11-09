@@ -23,9 +23,8 @@ class ExampleFreezedBloc
       data: (names) => names,
       orElse: () => const <String>[],
     );
-    final newNames = [...names];
-    newNames.add(event.name);
-
+    final newName = [...names];
+    newName.add(event.addName);
     emit(ExampleFreezedState.data(names: names));
     //
     // final stateExample = state;
@@ -66,18 +65,21 @@ class ExampleFreezedBloc
   // }
 
 //---------------FIND--------------------------
-FutureOr<void> _findNames(
-  _ExampleFreezedEventFindNames event,
-  Emitter<ExampleFreezedState> emitter,
-) async {
-  final names = [
-    'Rodrigo Rahmanm',
-    'Academia do Flutter',
-    'Flutter',
-    'Dart',
-    'Flutter Bloc',
-  ];
-  await Future.delayed(const Duration(microseconds: 500));
-  emitter(ExampleFreezedState.data(names: names));
-}
+  FutureOr<void> _findNames(
+    _ExampleFreezedEventFindNames event,
+    Emitter<ExampleFreezedState> emit,
+  ) async {
+    emit(ExampleFreezedState.loading());
+    final names = [
+      'Rodrigo Rahmanm',
+      'Academia do Flutter',
+      'Flutter',
+      'Dart',
+      'Flutter Bloc',
+    ];
+    
+    
+    await Future.delayed(const Duration(seconds: 2));
+    emit(ExampleFreezedState.data(names: names));
+  }
 }

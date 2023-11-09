@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed('/bloc/freezed/');
+                        Navigator.of(context).pushNamed('/bloc/example/freezed/');
                       },
                       child: ButtonCard(
                         name: 'Example Freezed',

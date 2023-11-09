@@ -19,18 +19,21 @@ mixin _$ExampleFreezedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(List<String> names) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(List<String> names)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(List<String> names)? data,
     required TResult orElse(),
   }) =>
@@ -38,18 +41,21 @@ mixin _$ExampleFreezedState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
     required TResult Function(_ExampleFreezedStateData value) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExampleFreezedStateInitial value)? initial,
+    TResult? Function(_ExampleFreezedStateLoading value)? loading,
     TResult? Function(_ExampleFreezedStateData value)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
     TResult Function(_ExampleFreezedStateData value)? data,
     required TResult orElse(),
   }) =>
@@ -117,6 +123,7 @@ class _$ExampleFreezedStateInitialImpl implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(List<String> names) data,
   }) {
     return initial();
@@ -126,6 +133,7 @@ class _$ExampleFreezedStateInitialImpl implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(List<String> names)? data,
   }) {
     return initial?.call();
@@ -135,6 +143,7 @@ class _$ExampleFreezedStateInitialImpl implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(List<String> names)? data,
     required TResult orElse(),
   }) {
@@ -148,6 +157,7 @@ class _$ExampleFreezedStateInitialImpl implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
     required TResult Function(_ExampleFreezedStateData value) data,
   }) {
     return initial(this);
@@ -157,6 +167,7 @@ class _$ExampleFreezedStateInitialImpl implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExampleFreezedStateInitial value)? initial,
+    TResult? Function(_ExampleFreezedStateLoading value)? loading,
     TResult? Function(_ExampleFreezedStateData value)? data,
   }) {
     return initial?.call(this);
@@ -166,6 +177,7 @@ class _$ExampleFreezedStateInitialImpl implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
     TResult Function(_ExampleFreezedStateData value)? data,
     required TResult orElse(),
   }) {
@@ -178,6 +190,118 @@ class _$ExampleFreezedStateInitialImpl implements _ExampleFreezedStateInitial {
 
 abstract class _ExampleFreezedStateInitial implements ExampleFreezedState {
   factory _ExampleFreezedStateInitial() = _$ExampleFreezedStateInitialImpl;
+}
+
+/// @nodoc
+abstract class _$$ExampleFreezedStateLoadingImplCopyWith<$Res> {
+  factory _$$ExampleFreezedStateLoadingImplCopyWith(
+          _$ExampleFreezedStateLoadingImpl value,
+          $Res Function(_$ExampleFreezedStateLoadingImpl) then) =
+      __$$ExampleFreezedStateLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ExampleFreezedStateLoadingImplCopyWithImpl<$Res>
+    extends _$ExampleFreezedStateCopyWithImpl<$Res,
+        _$ExampleFreezedStateLoadingImpl>
+    implements _$$ExampleFreezedStateLoadingImplCopyWith<$Res> {
+  __$$ExampleFreezedStateLoadingImplCopyWithImpl(
+      _$ExampleFreezedStateLoadingImpl _value,
+      $Res Function(_$ExampleFreezedStateLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ExampleFreezedStateLoadingImpl implements _ExampleFreezedStateLoading {
+  _$ExampleFreezedStateLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ExampleFreezedState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ExampleFreezedStateLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<String> names) data,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<String> names)? data,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<String> names)? data,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
+    required TResult Function(_ExampleFreezedStateData value) data,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ExampleFreezedStateInitial value)? initial,
+    TResult? Function(_ExampleFreezedStateLoading value)? loading,
+    TResult? Function(_ExampleFreezedStateData value)? data,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateData value)? data,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExampleFreezedStateLoading implements ExampleFreezedState {
+  factory _ExampleFreezedStateLoading() = _$ExampleFreezedStateLoadingImpl;
 }
 
 /// @nodoc
@@ -256,6 +380,7 @@ class _$ExampleFreezedStateDataImpl implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(List<String> names) data,
   }) {
     return data(names);
@@ -265,6 +390,7 @@ class _$ExampleFreezedStateDataImpl implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(List<String> names)? data,
   }) {
     return data?.call(names);
@@ -274,6 +400,7 @@ class _$ExampleFreezedStateDataImpl implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(List<String> names)? data,
     required TResult orElse(),
   }) {
@@ -287,6 +414,7 @@ class _$ExampleFreezedStateDataImpl implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
     required TResult Function(_ExampleFreezedStateData value) data,
   }) {
     return data(this);
@@ -296,6 +424,7 @@ class _$ExampleFreezedStateDataImpl implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExampleFreezedStateInitial value)? initial,
+    TResult? Function(_ExampleFreezedStateLoading value)? loading,
     TResult? Function(_ExampleFreezedStateData value)? data,
   }) {
     return data?.call(this);
@@ -305,6 +434,7 @@ class _$ExampleFreezedStateDataImpl implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
     TResult Function(_ExampleFreezedStateData value)? data,
     required TResult orElse(),
   }) {
@@ -330,21 +460,21 @@ mixin _$ExampleFreezedEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() findNames,
-    required TResult Function(String name) addName,
+    required TResult Function(String addName) addName,
     required TResult Function(String name) removeName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? findNames,
-    TResult? Function(String name)? addName,
+    TResult? Function(String addName)? addName,
     TResult? Function(String name)? removeName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? findNames,
-    TResult Function(String name)? addName,
+    TResult Function(String addName)? addName,
     TResult Function(String name)? removeName,
     required TResult orElse(),
   }) =>
@@ -435,7 +565,7 @@ class _$ExampleFreezedEventFindNamesImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() findNames,
-    required TResult Function(String name) addName,
+    required TResult Function(String addName) addName,
     required TResult Function(String name) removeName,
   }) {
     return findNames();
@@ -445,7 +575,7 @@ class _$ExampleFreezedEventFindNamesImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? findNames,
-    TResult? Function(String name)? addName,
+    TResult? Function(String addName)? addName,
     TResult? Function(String name)? removeName,
   }) {
     return findNames?.call();
@@ -455,7 +585,7 @@ class _$ExampleFreezedEventFindNamesImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? findNames,
-    TResult Function(String name)? addName,
+    TResult Function(String addName)? addName,
     TResult Function(String name)? removeName,
     required TResult orElse(),
   }) {
@@ -512,7 +642,7 @@ abstract class _$$ExampleFreezedEventAddNameImplCopyWith<$Res> {
           $Res Function(_$ExampleFreezedEventAddNameImpl) then) =
       __$$ExampleFreezedEventAddNameImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String name});
+  $Res call({String addName});
 }
 
 /// @nodoc
@@ -528,12 +658,12 @@ class __$$ExampleFreezedEventAddNameImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? addName = null,
   }) {
     return _then(_$ExampleFreezedEventAddNameImpl(
-      null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      addName: null == addName
+          ? _value.addName
+          : addName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -542,14 +672,14 @@ class __$$ExampleFreezedEventAddNameImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ExampleFreezedEventAddNameImpl implements _ExampleFreezedEventAddName {
-  const _$ExampleFreezedEventAddNameImpl(this.name);
+  const _$ExampleFreezedEventAddNameImpl({required this.addName});
 
   @override
-  final String name;
+  final String addName;
 
   @override
   String toString() {
-    return 'ExampleFreezedEvent.addName(name: $name)';
+    return 'ExampleFreezedEvent.addName(addName: $addName)';
   }
 
   @override
@@ -557,11 +687,11 @@ class _$ExampleFreezedEventAddNameImpl implements _ExampleFreezedEventAddName {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExampleFreezedEventAddNameImpl &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.addName, addName) || other.addName == addName));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode => Object.hash(runtimeType, addName);
 
   @JsonKey(ignore: true)
   @override
@@ -574,32 +704,32 @@ class _$ExampleFreezedEventAddNameImpl implements _ExampleFreezedEventAddName {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() findNames,
-    required TResult Function(String name) addName,
+    required TResult Function(String addName) addName,
     required TResult Function(String name) removeName,
   }) {
-    return addName(name);
+    return addName(this.addName);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? findNames,
-    TResult? Function(String name)? addName,
+    TResult? Function(String addName)? addName,
     TResult? Function(String name)? removeName,
   }) {
-    return addName?.call(name);
+    return addName?.call(this.addName);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? findNames,
-    TResult Function(String name)? addName,
+    TResult Function(String addName)? addName,
     TResult Function(String name)? removeName,
     required TResult orElse(),
   }) {
     if (addName != null) {
-      return addName(name);
+      return addName(this.addName);
     }
     return orElse();
   }
@@ -640,10 +770,10 @@ class _$ExampleFreezedEventAddNameImpl implements _ExampleFreezedEventAddName {
 }
 
 abstract class _ExampleFreezedEventAddName implements ExampleFreezedEvent {
-  const factory _ExampleFreezedEventAddName(final String name) =
+  const factory _ExampleFreezedEventAddName({required final String addName}) =
       _$ExampleFreezedEventAddNameImpl;
 
-  String get name;
+  String get addName;
   @JsonKey(ignore: true)
   _$$ExampleFreezedEventAddNameImplCopyWith<_$ExampleFreezedEventAddNameImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -720,7 +850,7 @@ class _$ExampleFreezedEventRemoveNameImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() findNames,
-    required TResult Function(String name) addName,
+    required TResult Function(String addName) addName,
     required TResult Function(String name) removeName,
   }) {
     return removeName(name);
@@ -730,7 +860,7 @@ class _$ExampleFreezedEventRemoveNameImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? findNames,
-    TResult? Function(String name)? addName,
+    TResult? Function(String addName)? addName,
     TResult? Function(String name)? removeName,
   }) {
     return removeName?.call(name);
@@ -740,7 +870,7 @@ class _$ExampleFreezedEventRemoveNameImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? findNames,
-    TResult Function(String name)? addName,
+    TResult Function(String addName)? addName,
     TResult Function(String name)? removeName,
     required TResult orElse(),
   }) {

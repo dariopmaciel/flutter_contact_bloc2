@@ -30,8 +30,11 @@ class MyApp extends StatelessWidget {
               create: (_) => ExampleBloc()..add(ExampleFindNameEvent()),
               child: BlocExample(),
             ),
-        '/bloc/freezed/': (context) => BlocProvider(
-              create: (_) => ExampleFreezedBloc()..add(ExampleFreezedEvent.findNames()),
+        '/bloc/example/freezed/': (context) => BlocProvider(
+              create: (context) => ExampleFreezedBloc()
+                ..add(
+                  const ExampleFreezedEvent.findNames(),
+                ),
               child: const BlocFreezedExample(),
             ),
       },
