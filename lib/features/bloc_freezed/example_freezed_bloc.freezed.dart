@@ -331,21 +331,21 @@ mixin _$ExampleFreezedEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() findNames,
     required TResult Function(String name) addName,
-    required TResult Function() removeName,
+    required TResult Function(String name) removeName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? findNames,
     TResult? Function(String name)? addName,
-    TResult? Function()? removeName,
+    TResult? Function(String name)? removeName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? findNames,
     TResult Function(String name)? addName,
-    TResult Function()? removeName,
+    TResult Function(String name)? removeName,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -436,7 +436,7 @@ class _$ExampleFreezedEventFindNamesImpl
   TResult when<TResult extends Object?>({
     required TResult Function() findNames,
     required TResult Function(String name) addName,
-    required TResult Function() removeName,
+    required TResult Function(String name) removeName,
   }) {
     return findNames();
   }
@@ -446,7 +446,7 @@ class _$ExampleFreezedEventFindNamesImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? findNames,
     TResult? Function(String name)? addName,
-    TResult? Function()? removeName,
+    TResult? Function(String name)? removeName,
   }) {
     return findNames?.call();
   }
@@ -456,7 +456,7 @@ class _$ExampleFreezedEventFindNamesImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? findNames,
     TResult Function(String name)? addName,
-    TResult Function()? removeName,
+    TResult Function(String name)? removeName,
     required TResult orElse(),
   }) {
     if (findNames != null) {
@@ -575,7 +575,7 @@ class _$ExampleFreezedEventAddNameImpl implements _ExampleFreezedEventAddName {
   TResult when<TResult extends Object?>({
     required TResult Function() findNames,
     required TResult Function(String name) addName,
-    required TResult Function() removeName,
+    required TResult Function(String name) removeName,
   }) {
     return addName(name);
   }
@@ -585,7 +585,7 @@ class _$ExampleFreezedEventAddNameImpl implements _ExampleFreezedEventAddName {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? findNames,
     TResult? Function(String name)? addName,
-    TResult? Function()? removeName,
+    TResult? Function(String name)? removeName,
   }) {
     return addName?.call(name);
   }
@@ -595,7 +595,7 @@ class _$ExampleFreezedEventAddNameImpl implements _ExampleFreezedEventAddName {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? findNames,
     TResult Function(String name)? addName,
-    TResult Function()? removeName,
+    TResult Function(String name)? removeName,
     required TResult orElse(),
   }) {
     if (addName != null) {
@@ -655,6 +655,8 @@ abstract class _$$ExampleFreezedEventRemoveNameImplCopyWith<$Res> {
           _$ExampleFreezedEventRemoveNameImpl value,
           $Res Function(_$ExampleFreezedEventRemoveNameImpl) then) =
       __$$ExampleFreezedEventRemoveNameImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String name});
 }
 
 /// @nodoc
@@ -666,37 +668,62 @@ class __$$ExampleFreezedEventRemoveNameImplCopyWithImpl<$Res>
       _$ExampleFreezedEventRemoveNameImpl _value,
       $Res Function(_$ExampleFreezedEventRemoveNameImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$ExampleFreezedEventRemoveNameImpl(
+      null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ExampleFreezedEventRemoveNameImpl
     implements _ExampleFreezedEventRemoveName {
-  const _$ExampleFreezedEventRemoveNameImpl();
+  const _$ExampleFreezedEventRemoveNameImpl(this.name);
+
+  @override
+  final String name;
 
   @override
   String toString() {
-    return 'ExampleFreezedEvent.removeName()';
+    return 'ExampleFreezedEvent.removeName(name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExampleFreezedEventRemoveNameImpl);
+            other is _$ExampleFreezedEventRemoveNameImpl &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ExampleFreezedEventRemoveNameImplCopyWith<
+          _$ExampleFreezedEventRemoveNameImpl>
+      get copyWith => __$$ExampleFreezedEventRemoveNameImplCopyWithImpl<
+          _$ExampleFreezedEventRemoveNameImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() findNames,
     required TResult Function(String name) addName,
-    required TResult Function() removeName,
+    required TResult Function(String name) removeName,
   }) {
-    return removeName();
+    return removeName(name);
   }
 
   @override
@@ -704,9 +731,9 @@ class _$ExampleFreezedEventRemoveNameImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? findNames,
     TResult? Function(String name)? addName,
-    TResult? Function()? removeName,
+    TResult? Function(String name)? removeName,
   }) {
-    return removeName?.call();
+    return removeName?.call(name);
   }
 
   @override
@@ -714,11 +741,11 @@ class _$ExampleFreezedEventRemoveNameImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? findNames,
     TResult Function(String name)? addName,
-    TResult Function()? removeName,
+    TResult Function(String name)? removeName,
     required TResult orElse(),
   }) {
     if (removeName != null) {
-      return removeName();
+      return removeName(name);
     }
     return orElse();
   }
@@ -759,6 +786,12 @@ class _$ExampleFreezedEventRemoveNameImpl
 }
 
 abstract class _ExampleFreezedEventRemoveName implements ExampleFreezedEvent {
-  const factory _ExampleFreezedEventRemoveName() =
+  const factory _ExampleFreezedEventRemoveName(final String name) =
       _$ExampleFreezedEventRemoveNameImpl;
+
+  String get name;
+  @JsonKey(ignore: true)
+  _$$ExampleFreezedEventRemoveNameImplCopyWith<
+          _$ExampleFreezedEventRemoveNameImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

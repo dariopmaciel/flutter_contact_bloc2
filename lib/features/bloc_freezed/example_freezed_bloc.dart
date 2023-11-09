@@ -4,15 +4,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'example_freezed_state.dart';
-part 'example_freezed_bloc.freezed.dart';
 part 'example_freezed_event.dart';
+part 'example_freezed_bloc.freezed.dart';
 
 class ExampleFreezedBloc
     extends Bloc<ExampleFreezedEvent, ExampleFreezedState> {
   ExampleFreezedBloc() : super(ExampleFreezedState.initial()) {
     on<_ExampleFreezedEventAddName>(_addNames);
     on<_ExampleFreezedEventRemoveName>(_removeName);
-    // on<_ExampleFreezedEventFindNames>(_findNames);
+    on<_ExampleFreezedEventFindNames>(_findNames);
   }
 //---------------ADD--------------------------
   FutureOr<void> _addNames(
@@ -66,18 +66,18 @@ class ExampleFreezedBloc
   // }
 
 //---------------FIND--------------------------
-// FutureOr<void> _findNames(
-//   _ExampleFreezedEventFindNames event,
-//   Emitter<ExampleFreezedState> emitter,
-// ) async {
-//   final names = [
-//     'Rodrigo Rahmanm',
-//     'Academia do Flutter',
-//     'Flutter',
-//     'Dart',
-//     'Flutter Bloc',
-//   ];
-//   await Future.delayed(const Duration(seconds: 1));
-//   emitter(ExampleFreezedState.data(names: names));
-// }
+FutureOr<void> _findNames(
+  _ExampleFreezedEventFindNames event,
+  Emitter<ExampleFreezedState> emitter,
+) async {
+  final names = [
+    'Rodrigo Rahmanm',
+    'Academia do Flutter',
+    'Flutter',
+    'Dart',
+    'Flutter Bloc',
+  ];
+  await Future.delayed(const Duration(microseconds: 500));
+  emitter(ExampleFreezedState.data(names: names));
+}
 }

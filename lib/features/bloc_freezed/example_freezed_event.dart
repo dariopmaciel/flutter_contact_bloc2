@@ -6,5 +6,5 @@ class ExampleFreezedEvent with _$ExampleFreezedEvent {
   //  factory ExampleFreezedEvent() = _ExampleFreezedEvent;
   const factory ExampleFreezedEvent.findNames() = _ExampleFreezedEventFindNames;
   const factory ExampleFreezedEvent.addName(String name) = _ExampleFreezedEventAddName;
-  const factory ExampleFreezedEvent.removeName() = _ExampleFreezedEventRemoveName;
+  const factory ExampleFreezedEvent.removeName(String name) = _ExampleFreezedEventRemoveName;
 }
