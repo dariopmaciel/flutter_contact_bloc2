@@ -13,8 +13,9 @@ class BlocFreezedExample extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print("CASA");
-          // context.read<ExampleFreezedBloc>().add(ExampleFreezedEvent.addName(addName: 'Dario'));
-          context.read<ExampleFreezedBloc>().add(ExampleFreezedEvent.addName(addName: "addName"));
+          context.read<ExampleFreezedBloc>().add(
+                const ExampleFreezedEvent.addName(addName: "DDDD"),
+              );
         },
         child: const Icon(Icons.add),
       ),

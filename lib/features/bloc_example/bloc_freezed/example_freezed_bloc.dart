@@ -25,7 +25,7 @@ class ExampleFreezedBloc
     );
     final newName = [...names];
     newName.add(event.addName);
-    emit(ExampleFreezedState.data(names: names));
+    emit(ExampleFreezedState.data(names: newName));
     //
     // final stateExample = state;
     // if (stateExample is ExampleStateData) {
