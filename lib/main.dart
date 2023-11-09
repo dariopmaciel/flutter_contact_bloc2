@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_contact_bloc/features/bloc_example/bloc/example_bloc.dart';
 import 'package:flutter_contact_bloc/features/bloc_example/bloc_example.dart';
+import 'package:flutter_contact_bloc/features/bloc_example/bloc_freezed_example.dart';
 import 'package:flutter_contact_bloc/home/home_page.dart';
 
 void main() {
@@ -24,10 +25,14 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (_) => const HomePage(),
         '/bloc/example/': (_) => BlocProvider(
-          // O castate notation '...add' propicia iniciar um evento 'ExampleFindNameEvent'
+              // O castate notation '...add' propicia iniciar um evento 'ExampleFindNameEvent'
               create: (_) => ExampleBloc()..add(ExampleFindNameEvent()),
-              child:  BlocExample(),
+              child: BlocExample(),
             ),
+        '/bloc/freezed/': (context) => 
+              // BlocProvider(create: (_) => ExampleBloc(), child: const 
+              BlocFreezedExample(),
+            // ),
       },
     );
   }
