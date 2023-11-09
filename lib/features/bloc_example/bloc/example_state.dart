@@ -6,8 +6,8 @@ abstract class ExampleState {}
 class ExampleStateInitial extends ExampleState {}
 
 class ExampleStateData extends ExampleState {
-  final List<String> nomes;
-  ExampleStateData({required this.nomes});
+  final List<String> names;
+  ExampleStateData({required this.names});
   // List<Object> get props => [nomes];
 }
 

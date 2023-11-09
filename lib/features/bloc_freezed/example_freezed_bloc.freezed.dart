@@ -15,67 +15,6 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ExampleFreezedBloc {}
-
-/// @nodoc
-abstract class $ExampleFreezedBlocCopyWith<$Res> {
-  factory $ExampleFreezedBlocCopyWith(
-          ExampleFreezedBloc value, $Res Function(ExampleFreezedBloc) then) =
-      _$ExampleFreezedBlocCopyWithImpl<$Res, ExampleFreezedBloc>;
-}
-
-/// @nodoc
-class _$ExampleFreezedBlocCopyWithImpl<$Res, $Val extends ExampleFreezedBloc>
-    implements $ExampleFreezedBlocCopyWith<$Res> {
-  _$ExampleFreezedBlocCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$ExampleFreezedBlocImplCopyWith<$Res> {
-  factory _$$ExampleFreezedBlocImplCopyWith(_$ExampleFreezedBlocImpl value,
-          $Res Function(_$ExampleFreezedBlocImpl) then) =
-      __$$ExampleFreezedBlocImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ExampleFreezedBlocImplCopyWithImpl<$Res>
-    extends _$ExampleFreezedBlocCopyWithImpl<$Res, _$ExampleFreezedBlocImpl>
-    implements _$$ExampleFreezedBlocImplCopyWith<$Res> {
-  __$$ExampleFreezedBlocImplCopyWithImpl(_$ExampleFreezedBlocImpl _value,
-      $Res Function(_$ExampleFreezedBlocImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ExampleFreezedBlocImpl implements _ExampleFreezedBloc {
-  _$ExampleFreezedBlocImpl();
-
-  @override
-  String toString() {
-    return 'ExampleFreezedBloc()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ExampleFreezedBlocImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class _ExampleFreezedBloc implements ExampleFreezedBloc {
-  factory _ExampleFreezedBloc() = _$ExampleFreezedBlocImpl;
-}
-
-/// @nodoc
 mixin _$ExampleFreezedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({

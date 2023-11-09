@@ -22,7 +22,7 @@ class BlocExample extends StatelessWidget {
         // este metodo 'listenWhen' tem em todos os bloc (menos o 'Selector') e define QUANDO ele será executado. Já o 'Consumer' tem o buildWhen
         listenWhen: (previous, current) {
           if (previous is ExampleStateInitial && current is ExampleStateData) {
-            if (current.nomes.length > 3) {
+            if (current.names.length > 3) {
               return true;
             }
           }
@@ -33,7 +33,7 @@ class BlocExample extends StatelessWidget {
           if (state is ExampleStateData) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('A quantidade de nomes é ${state.nomes.length}'),
+                content: Text('A quantidade de nomes é ${state.names.length}'),
               ),
             );
           }
@@ -86,7 +86,7 @@ class BlocExample extends StatelessWidget {
             BlocSelector<ExampleBloc, ExampleState, List<String>>(
               selector: (state) {
                 if (state is ExampleStateData) {
-                  return state.nomes;
+                  return state.names;
                 } else {
                   return [];
                 }

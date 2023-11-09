@@ -12,10 +12,11 @@ class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
   ExampleBloc() : super(ExampleStateInitial()) {
     on<ExampleFindNameEvent>(_findNames);
     on<ExampleRemoveNameEvent>(_removeNames);
-    on<ExampleAddNameEvent>(_addNames);
+    on<ExampleAddNameEvent>(_addName);
   }
 
-  FutureOr<void> _removeNames(ExampleRemoveNameEvent event, Emitter emit) {
+  FutureOr<void> _removeNames(
+      ExampleRemoveNameEvent event, Emitter<ExampleState> emit) {
     //atribuido para uma variavel local para poder remover este cast '(state as ExampleStateData)'
     //pois variaveis locais fazem auto promoção do tipo
     final stateExample = state;
@@ -24,16 +25,14 @@ class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
     // }
     if (stateExample is ExampleStateData) {
       //necessário fazer spreadOperator pois quando se remove se faz na mesma instancia, mesma lista. O SpreadOperator cria uma segunda lista comparativa
-      final names = [...stateExample.nomes];
+      final names = [...stateExample.names];
       names.retainWhere((element) => element != event.nome);
-      emit(ExampleStateData(nomes: names));
+      emit(ExampleStateData(names: names));
     }
   }
 
   FutureOr<void> _findNames(
-    ExampleFindNameEvent event,
-    Emitter<ExampleState> emitter,
-  ) async {
+      ExampleFindNameEvent event, Emitter<ExampleState> emitter) async {
     final names = [
       'Rodrigo Rahmanm',
       'Academia do Flutter',
@@ -42,18 +41,22 @@ class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
       'Flutter Bloc',
     ];
     await Future.delayed(const Duration(seconds: 1));
-    emitter(ExampleStateData(nomes: names));
+    emitter(ExampleStateData(names: names));
   }
 
-  FutureOr<void> _addNames(
-      ExampleAddNameEvent event, Emitter<ExampleState> emit) {
+  FutureOr<void> _addName(
+    ExampleAddNameEvent event,
+    Emitter<ExampleState> emit,
+  ) {
     final stateExample = state;
     if (stateExample is ExampleStateData) {
-      final names = [...stateExample.nomes, event.addnome];
-
+      final names = [...stateExample.names];
+      names.add(event.addnome);
+      emit(ExampleStateData(names: names));
+      // final names = [...stateExample.names, event.addnome];
       // names.add(event.name); // Adicione o novo nome à lista
-      emit(ExampleStateData(
-          nomes: names)); // Emita o novo estado com o nome adicionado
+      // Emita o novo estado com o nome adicionado
+      // emit(ExampleStateData(names: names));
     }
   }
 }
