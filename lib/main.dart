@@ -25,16 +25,15 @@ class MyApp extends StatelessWidget {
       // home: HomePage(),
       routes: {
         '/home': (_) => const HomePage(),
-        '/bloc/example/': (_) => BlocProvider(
+        '/bloc/bloc_example/': (_) => BlocProvider(
               // O castate notation '...add' propicia iniciar um evento 'ExampleFindNameEvent'
               create: (_) => ExampleBloc()..add(ExampleFindNameEvent()),
               child: BlocExample(),
             ),
-        '/bloc/example/freezed/': (context) => BlocProvider(
+        '/bloc/freezed_example/': (context) => BlocProvider(
               create: (context) => ExampleFreezedBloc()
-                ..add(
-                  const ExampleFreezedEvent.findNames(),
-                ),
+              //A adição de evento garante o carregamento da lista de itens
+                ..add(const ExampleFreezedEvent.findNames()),
               child: const BlocFreezedExample(),
             ),
       },

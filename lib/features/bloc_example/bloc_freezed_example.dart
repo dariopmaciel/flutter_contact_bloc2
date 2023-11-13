@@ -9,7 +9,7 @@ class BlocFreezedExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Example Freezed')),
+      appBar: AppBar(title: const Text('Freezed Example')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print("CASA");
@@ -20,7 +20,7 @@ class BlocFreezedExample extends StatelessWidget {
         child: const Icon(Icons.add),
       ),
       body: Column(children: [
-        //------------------------------------
+        //--------------Loader----------------------
         BlocSelector<ExampleFreezedBloc, ExampleFreezedState, bool>(
           selector: (state) {
             return state.maybeWhen(
@@ -44,7 +44,7 @@ class BlocFreezedExample extends StatelessWidget {
             return const SizedBox.shrink();
           },
         ),
-        //-------------------------------------
+        //-----------Lista de itens--------------------------
         BlocSelector<ExampleFreezedBloc, ExampleFreezedState, List<String>>(
           selector: (state) {
             return state.maybeWhen(
