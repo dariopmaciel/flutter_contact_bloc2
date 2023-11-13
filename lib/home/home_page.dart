@@ -44,10 +44,10 @@ class HomePage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed('/bloc/example/');
+                        Navigator.of(context).pushNamed('/bloc/contact_list/');
                       },
                       child: ButtonCard(
-                        name: 'Contact',
+                        name: 'Contact List',
                       ),
                     ),
                     InkWell(
