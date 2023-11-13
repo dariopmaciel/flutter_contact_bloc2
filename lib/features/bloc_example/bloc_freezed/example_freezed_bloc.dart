@@ -15,14 +15,21 @@ class ExampleFreezedBloc
     on<_ExampleFreezedEventFindNames>(_findNames);
   }
 //---------------ADD--------------------------
-  FutureOr<void> _addNames(
+  Future<FutureOr<void>> _addNames(
     _ExampleFreezedEventAddName event,
     Emitter<ExampleFreezedState> emit,
-  ) {
+  ) async {
     final names = state.maybeWhen(
       data: (names) => names,
       orElse: () => const <String>[],
     );
+
+    emit(ExampleFreezedState.showBanner(
+      names: names,
+      message: "Aguarde, nomes sendo inserido!!!!!",
+    ));
+    await Future.delayed(const Duration(seconds: 2));
+
     final newName = [...names];
     newName.add(event.addName);
     emit(ExampleFreezedState.data(names: newName));
@@ -77,8 +84,7 @@ class ExampleFreezedBloc
       'Dart',
       'Flutter Bloc',
     ];
-    
-    
+
     await Future.delayed(const Duration(seconds: 2));
     emit(ExampleFreezedState.data(names: names));
   }
