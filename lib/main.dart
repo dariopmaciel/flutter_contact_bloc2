@@ -6,6 +6,8 @@ import 'package:flutter_contact_bloc/features/bloc_example/bloc_freezed/example_
 import 'package:flutter_contact_bloc/features/bloc_example/bloc_freezed_example.dart';
 import 'package:flutter_contact_bloc/features/contacts/list/bloc/contact_list_bloc.dart';
 import 'package:flutter_contact_bloc/features/contacts/list/contacts_list_page.dart';
+import 'package:flutter_contact_bloc/features/contacts/register/contact_register_page.dart';
+import 'package:flutter_contact_bloc/features/contacts/update/contact_update_page.dart';
 import 'package:flutter_contact_bloc/home/home_page.dart';
 import 'package:flutter_contact_bloc/repositories/contacts_repository.dart';
 
@@ -31,21 +33,25 @@ class MyApp extends StatelessWidget {
         // home: HomePage(),
         routes: {
           '/home': (_) => const HomePage(),
-          '/bloc/bloc_example/': (_) => BlocProvider(
+          '/bloc/bloc_example': (_) => BlocProvider(
                 // O castate notation '...add' propicia iniciar um evento 'ExampleFindNameEvent'
                 create: (_) => ExampleBloc()..add(ExampleFindNameEvent()),
                 child: const BlocExample(),
               ),
-          '/bloc/freezed_example/': (context) => BlocProvider(
+          '/bloc/freezed_example': (context) => BlocProvider(
                 create: (context) => ExampleFreezedBloc()
                   //A adição de evento garante o carregamento da lista de itens
                   ..add(const ExampleFreezedEvent.findNames()),
                 child: const BlocFreezedExample(),
               ),
-          '/bloc/contact_list/': (context) => BlocProvider(
-                create: (_) => ContactListBloc(repository: context.read<ContactsRepository>())..add(const ContactListEvent.findAll()),
+          '/contact/list': (context) => BlocProvider(
+                create: (_) => ContactListBloc(
+                    repository: context.read<ContactsRepository>())
+                  ..add(const ContactListEvent.findAll()),
                 child: const ContactsListPage(),
               ),
+          '/contact/register': (context) => const ContactRegisterPage(),
+          '/contact/update': (context) => const ContactUpdatePage(),
         },
       ),
     );
