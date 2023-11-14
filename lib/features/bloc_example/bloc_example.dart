@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_contact_bloc/features/bloc_example/bloc/example_bloc.dart';
 
 class BlocExample extends StatelessWidget {
-  BlocExample({super.key});
+  const BlocExample({super.key});
 
   @override
   Widget build(BuildContext context) {

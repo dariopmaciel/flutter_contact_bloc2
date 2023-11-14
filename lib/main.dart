@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           '/bloc/bloc_example/': (_) => BlocProvider(
                 // O castate notation '...add' propicia iniciar um evento 'ExampleFindNameEvent'
                 create: (_) => ExampleBloc()..add(ExampleFindNameEvent()),
-                child: BlocExample(),
+                child: const BlocExample(),
               ),
           '/bloc/freezed_example/': (context) => BlocProvider(
                 create: (context) => ExampleFreezedBloc()
