@@ -26,7 +26,7 @@ class _ContactRegisterPageState extends State<ContactRegisterPage> {
         title: const Text('New Register'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Form(
           key: _formKey,
           child: Column(

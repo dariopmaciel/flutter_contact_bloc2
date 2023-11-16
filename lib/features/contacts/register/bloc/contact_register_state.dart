@@ -4,3 +4,4 @@ part of 'contact_register_bloc.dart';
 class ContactRegisterState with _$ContactRegisterState {
   const factory ContactRegisterState.initial() = ContactRegisterStateInitial;
 }
+
