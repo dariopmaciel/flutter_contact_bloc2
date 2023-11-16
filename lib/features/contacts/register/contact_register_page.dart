@@ -28,61 +28,76 @@ class _ContactRegisterPageState extends State<ContactRegisterPage> {
       appBar: AppBar(
         title: const Text('New Register'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                controller: _nameEC,
-                decoration: const InputDecoration(
-                  label: Text("Nome:"),
+      body: BlocListener<ContactRegisterBloc, ContactRegisterState>(
+        listener: (BuildContext context, state) {
+          state.whenOrNull(
+            success: () => Navigator.of(context).pop(),
+            error: (message) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(message,style: const TextStyle(color: Colors.white),),
+                  backgroundColor: Colors.red,
                 ),
-                validator: (String? value) {
-                  if (value == null || value.isEmpty) {
-                    return '* Nome Obrigatório';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                controller: _emailEC,
-                decoration: const InputDecoration(
-                  label: Text("E-mail:"),
+              );
+            },
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: _nameEC,
+                  decoration: const InputDecoration(
+                    label: Text("Nome:"),
+                  ),
+                  validator: (String? value) {
+                    if (value == null || value.isEmpty) {
+                      return '* Nome Obrigatório';
+                    }
+                    return null;
+                  },
                 ),
-                validator: (String? value) {
-                  if (value == null || value.isEmpty) {
-                    return '* E-mail Obrigatório';
-                  }
-                  return null;
-                },
-              ),
-              // const SizedBox(height: 35),
-              ElevatedButton(
-                onPressed: () {
-                  final validade = _formKey.currentState?.validate() ?? false;
-                  if (validade) {
-                    context.read<ContactRegisterBloc>().add(
-                          ContactRegisterEvent.save(
-                            name: _nameEC.text,
-                            email: _emailEC.text,
-                          ),
-                        );
-                  }
-                },
-                child: const Text("Salvar"),
-              ),
-              // Loader<ContactRegisterBloc, ContactRegisterState>(
-              //   selector: (state) {
-              //     return state.maybeWhen(
-              //       loading: () => true,
-              //       orElse: () => false,
-              //     );
-              //   },
-              // ),
-            ],
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: _emailEC,
+                  decoration: const InputDecoration(
+                    label: Text("E-mail:"),
+                  ),
+                  validator: (String? value) {
+                    if (value == null || value.isEmpty) {
+                      return '* E-mail Obrigatório';
+                    }
+                    return null;
+                  },
+                ),
+                // const SizedBox(height: 35),
+                ElevatedButton(
+                  onPressed: () {
+                    final validade = _formKey.currentState?.validate() ?? false;
+                    if (validade) {
+                      context.read<ContactRegisterBloc>().add(
+                            ContactRegisterEvent.save(
+                              name: _nameEC.text,
+                              email: _emailEC.text,
+                            ),
+                          );
+                    }
+                  },
+                  child: const Text("Salvar"),
+                ),
+                Loader<ContactRegisterBloc, ContactRegisterState>(
+                  selector: (state) {
+                    return state.maybeWhen(
+                      loading: () => true,
+                      orElse: () => false,
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
