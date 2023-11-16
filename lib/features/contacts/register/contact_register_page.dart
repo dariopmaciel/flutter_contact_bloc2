@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_contact_bloc/features/contacts/register/bloc/contact_register_bloc.dart';
+import 'package:flutter_contact_bloc/widgets/loader.dart';
 
 class ContactRegisterPage extends StatefulWidget {
-  const ContactRegisterPage({super.key});
+  const ContactRegisterPage({Key? key}) : super(key: key);
 
   @override
   State<ContactRegisterPage> createState() => _ContactRegisterPageState();
@@ -34,7 +37,7 @@ class _ContactRegisterPageState extends State<ContactRegisterPage> {
               TextFormField(
                 controller: _nameEC,
                 decoration: const InputDecoration(
-                  label: Text("Nome: "),
+                  label: Text("Nome:"),
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
@@ -44,10 +47,10 @@ class _ContactRegisterPageState extends State<ContactRegisterPage> {
                 },
               ),
               TextFormField(
-                keyboardType:TextInputType.emailAddress ,
+                keyboardType: TextInputType.emailAddress,
                 controller: _emailEC,
                 decoration: const InputDecoration(
-                  label: Text("E-mail: "),
+                  label: Text("E-mail:"),
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
@@ -56,10 +59,29 @@ class _ContactRegisterPageState extends State<ContactRegisterPage> {
                   return null;
                 },
               ),
+              // const SizedBox(height: 35),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  final validade = _formKey.currentState?.validate() ?? false;
+                  if (validade) {
+                    context.read<ContactRegisterBloc>().add(
+                          ContactRegisterEvent.save(
+                            name: _nameEC.text,
+                            email: _emailEC.text,
+                          ),
+                        );
+                  }
+                },
                 child: const Text("Salvar"),
               ),
+              // Loader<ContactRegisterBloc, ContactRegisterState>(
+              //   selector: (state) {
+              //     return state.maybeWhen(
+              //       loading: () => true,
+              //       orElse: () => false,
+              //     );
+              //   },
+              // ),
             ],
           ),
         ),

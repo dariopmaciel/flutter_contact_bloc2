@@ -19,32 +19,38 @@ mixin _$ContactRegisterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ContactRegisterStateInitial value) initial,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ContactRegisterStateInitial value)? initial,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ContactRegisterStateInitial value)? initial,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,39 +76,41 @@ class _$ContactRegisterStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ContactRegisterStateInitialImplCopyWith<$Res> {
-  factory _$$ContactRegisterStateInitialImplCopyWith(
-          _$ContactRegisterStateInitialImpl value,
-          $Res Function(_$ContactRegisterStateInitialImpl) then) =
-      __$$ContactRegisterStateInitialImplCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ContactRegisterStateInitialImplCopyWithImpl<$Res>
-    extends _$ContactRegisterStateCopyWithImpl<$Res,
-        _$ContactRegisterStateInitialImpl>
-    implements _$$ContactRegisterStateInitialImplCopyWith<$Res> {
-  __$$ContactRegisterStateInitialImplCopyWithImpl(
-      _$ContactRegisterStateInitialImpl _value,
-      $Res Function(_$ContactRegisterStateInitialImpl) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$ContactRegisterStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ContactRegisterStateInitialImpl implements ContactRegisterStateInitial {
-  const _$ContactRegisterStateInitialImpl();
+class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
+  const _$InitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ContactRegisterState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'ContactRegisterState.initial'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ContactRegisterStateInitialImpl);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -112,6 +120,7 @@ class _$ContactRegisterStateInitialImpl implements ContactRegisterStateInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
   }) {
     return initial();
   }
@@ -120,6 +129,7 @@ class _$ContactRegisterStateInitialImpl implements ContactRegisterStateInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
   }) {
     return initial?.call();
   }
@@ -128,6 +138,7 @@ class _$ContactRegisterStateInitialImpl implements ContactRegisterStateInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -139,7 +150,8 @@ class _$ContactRegisterStateInitialImpl implements ContactRegisterStateInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ContactRegisterStateInitial value) initial,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
   }) {
     return initial(this);
   }
@@ -147,7 +159,8 @@ class _$ContactRegisterStateInitialImpl implements ContactRegisterStateInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ContactRegisterStateInitial value)? initial,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
   }) {
     return initial?.call(this);
   }
@@ -155,7 +168,8 @@ class _$ContactRegisterStateInitialImpl implements ContactRegisterStateInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ContactRegisterStateInitial value)? initial,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,28 +179,135 @@ class _$ContactRegisterStateInitialImpl implements ContactRegisterStateInitial {
   }
 }
 
-abstract class ContactRegisterStateInitial implements ContactRegisterState {
-  const factory ContactRegisterStateInitial() =
-      _$ContactRegisterStateInitialImpl;
+abstract class _Initial implements ContactRegisterState {
+  const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$ContactRegisterStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
+  const _$LoadingImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ContactRegisterState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'ContactRegisterState.loading'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements ContactRegisterState {
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
 mixin _$ContactRegisterEvent {
-  String get nome => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String nome, String email) save,
+    required TResult Function(String name, String email) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String nome, String email)? save,
+    TResult? Function(String name, String email)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String nome, String email)? save,
+    TResult Function(String name, String email)? save,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -218,7 +339,7 @@ abstract class $ContactRegisterEventCopyWith<$Res> {
           $Res Function(ContactRegisterEvent) then) =
       _$ContactRegisterEventCopyWithImpl<$Res, ContactRegisterEvent>;
   @useResult
-  $Res call({String nome, String email});
+  $Res call({String name, String email});
 }
 
 /// @nodoc
@@ -235,13 +356,13 @@ class _$ContactRegisterEventCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? nome = null,
+    Object? name = null,
     Object? email = null,
   }) {
     return _then(_value.copyWith(
-      nome: null == nome
-          ? _value.nome
-          : nome // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -259,7 +380,7 @@ abstract class _$$SaveImplCopyWith<$Res>
       __$$SaveImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String nome, String email});
+  $Res call({String name, String email});
 }
 
 /// @nodoc
@@ -272,13 +393,13 @@ class __$$SaveImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? nome = null,
+    Object? name = null,
     Object? email = null,
   }) {
     return _then(_$SaveImpl(
-      nome: null == nome
-          ? _value.nome
-          : nome // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -290,17 +411,26 @@ class __$$SaveImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SaveImpl implements _Save {
-  const _$SaveImpl({required this.nome, required this.email});
+class _$SaveImpl with DiagnosticableTreeMixin implements _Save {
+  const _$SaveImpl({required this.name, required this.email});
 
   @override
-  final String nome;
+  final String name;
   @override
   final String email;
 
   @override
-  String toString() {
-    return 'ContactRegisterEvent.save(nome: $nome, email: $email)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ContactRegisterEvent.save(name: $name, email: $email)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ContactRegisterEvent.save'))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
@@ -308,12 +438,12 @@ class _$SaveImpl implements _Save {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SaveImpl &&
-            (identical(other.nome, nome) || other.nome == nome) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, nome, email);
+  int get hashCode => Object.hash(runtimeType, name, email);
 
   @JsonKey(ignore: true)
   @override
@@ -324,27 +454,27 @@ class _$SaveImpl implements _Save {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String nome, String email) save,
+    required TResult Function(String name, String email) save,
   }) {
-    return save(nome, email);
+    return save(name, email);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String nome, String email)? save,
+    TResult? Function(String name, String email)? save,
   }) {
-    return save?.call(nome, email);
+    return save?.call(name, email);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String nome, String email)? save,
+    TResult Function(String name, String email)? save,
     required TResult orElse(),
   }) {
     if (save != null) {
-      return save(nome, email);
+      return save(name, email);
     }
     return orElse();
   }
@@ -380,10 +510,10 @@ class _$SaveImpl implements _Save {
 
 abstract class _Save implements ContactRegisterEvent {
   const factory _Save(
-      {required final String nome, required final String email}) = _$SaveImpl;
+      {required final String name, required final String email}) = _$SaveImpl;
 
   @override
-  String get nome;
+  String get name;
   @override
   String get email;
   @override
