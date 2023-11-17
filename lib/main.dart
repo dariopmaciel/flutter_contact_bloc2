@@ -17,7 +17,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}):super(key: key);
   @override
   Widget build(BuildContext context) {
     //Envolvendo o 'MaterialApp' com o 'RepositoryProvider', disponibiliza-se o 'ContactsRepository()' para toda a árvore de componentes. Sendo necessário ser recebido em 'ContactListBloc'
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
                     contactRepository: context.read(),
                   ),
               child: const ContactRegisterPage()),
-          '/contact/update': (context) => const ContactUpdatePage(),
+          // '/contact/update': (context) => ContactUpdatePage(),
         },
       ),
     );

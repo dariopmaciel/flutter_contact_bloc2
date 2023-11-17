@@ -4,19 +4,14 @@ host: 0.0.0.0
 db: db.json
 statics: public/
 
-# name: Json Rest Server
-# port: 8080
-# host: 0.0.0.0
-# database: database.json
-
-# auth:
+auth:
 #   jwtSecret: cwsMXDtuP447WZQ63nM4dWZ3RppyMl
 #   jwtExpire: 3600
 #   unauthorizedStatusCode: 403
 #   urlSkip:
 #     - /images/:
 #        method: get
-#     - /users:
+#     - /contact/register:
 #        method: post
 #      - /products/{*}:
 #        method: get

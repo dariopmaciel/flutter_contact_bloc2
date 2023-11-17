@@ -25,17 +25,25 @@ class _ContactRegisterPageState extends State<ContactRegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('New Register'),
-      ),
+      appBar: AppBar(title: const Text('New Register')),
       body: BlocListener<ContactRegisterBloc, ContactRegisterState>(
+        listenWhen: (previous, current) {
+          return current.maybeWhen(
+            success: () => true,
+            error: (_) => true,
+            orElse: () => false,
+          );
+        },
         listener: (BuildContext context, state) {
           state.whenOrNull(
             success: () => Navigator.of(context).pop(),
             error: (message) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(message,style: const TextStyle(color: Colors.white),),
+                  content: Text(
+                    message,
+                    style: const TextStyle(color: Colors.white),
+                  ),
                   backgroundColor: Colors.red,
                 ),
               );

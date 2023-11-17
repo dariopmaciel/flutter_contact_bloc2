@@ -5,15 +5,18 @@ import 'package:flutter_contact_bloc/models/contact_model.dart';
 import 'package:flutter_contact_bloc/widgets/loader.dart';
 
 class ContactsListPage extends StatelessWidget {
-  const ContactsListPage({super.key});
+  const ContactsListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Contact List')),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/contact/register');
+        onPressed: () async {
+          await Navigator.pushNamed(context, '/contact/register');
+          context.read<ContactListBloc>().add(
+                const ContactListEvent.findAll(),
+              );
         },
         child: const Icon(Icons.add),
       ),
@@ -24,23 +27,21 @@ class ContactsListPage extends StatelessWidget {
             orElse: () => false,
           );
         },
-        listener: (BuildContext context, state) {
-          state.maybeWhen(
-            error: (error) {
+        listener: (context, state) {
+          state.whenOrNull(
+            error: (message) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
+                  backgroundColor: Colors.red,
                   content: Text(
-                    error,
+                    message,
                     style: const TextStyle(
                       color: Colors.white,
                     ),
                   ),
-                  backgroundColor: Colors.red,
                 ),
               );
             },
-            //aqui pode dar erro
-            orElse: () => false,
           );
         },
         child: RefreshIndicator(
@@ -70,6 +71,7 @@ class ContactsListPage extends StatelessWidget {
                       builder: (_, contacts) {
                         return ListView.builder(
                           shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: contacts.length,
                           itemBuilder: (context, index) {
                             final contact = contacts[index];
