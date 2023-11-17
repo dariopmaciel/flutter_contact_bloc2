@@ -1,5 +1,9 @@
 # flutter_contact_bloc
-
+<!-- 
+Anotações para mim:
+1- Em um terminal, acessar a pasta de backend e rodar 'json_rest_server run'
+2- Em segundo terminal rodar 'flutter pub run build_runner watch' ou 'dart run build_runner watch'
+ -->
 A new Flutter project.
 
 ## Getting Started
