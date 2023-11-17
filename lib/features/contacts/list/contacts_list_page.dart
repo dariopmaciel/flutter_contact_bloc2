@@ -76,6 +76,14 @@ class ContactsListPage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final contact = contacts[index];
                             return ListTile(
+                              onLongPress: () {
+                                //DELETE
+                                //Clicou e segurou, abre uma janela com a pergunta se deseja deleter o 'contact', sim ou não.
+                                //
+                                context.read<ContactListBloc>().add(
+                                      ContactListEvent.delete(id: contact),
+                                    );
+                              },
                               onTap: () async {
                                 await Navigator.pushNamed(
                                     context, '/contact/update',
