@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_contact_bloc/models/contact_model.dart';
 
 class ContactUpdatePage extends StatefulWidget {
-  ContactModel contato;
-  ContactUpdatePage({Key? key, required this.contato}) : super(key: key);
+  final ContactModel contato;
+
+  const ContactUpdatePage({Key? key, required this.contato}) : super(key: key);
 
   @override
   State<ContactUpdatePage> createState() => _ContactUpdatePageState();
@@ -12,9 +13,12 @@ class ContactUpdatePage extends StatefulWidget {
 
 class _ContactUpdatePageState extends State<ContactUpdatePage> {
   final _formKey = GlobalKey<FormState>();
+  //QUANDO "EDIÇÃO" usar desta maneira, pois ele será inicializado depois. Ele irá receber um objeto depois de tudo inicializado
+  //Para isto é necessário instanciar um objeto da classe 'Contactmodel', pois tem as variaveis internas dele.
   late final TextEditingController _nameEC;
   late final TextEditingController _emailEC;
 
+  //Uma vez iniciado novos objetos de classes, estas precisam ser finalizadas apos mudança de tela, para isto "Dispose"
   @override
   void dispose() {
     _nameEC.dispose();
@@ -25,6 +29,7 @@ class _ContactUpdatePageState extends State<ContactUpdatePage> {
   @override
   void initState() {
     super.initState();
+    //para receber os atributos, estas devem ser widgets
     _nameEC = TextEditingController(text: widget.contato.name);
     _emailEC = TextEditingController(text: widget.contato.email);
   }
