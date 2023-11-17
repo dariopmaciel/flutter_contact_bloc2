@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_contact_bloc/features/contacts/update/bloc/contact_update_bloc.dart';
 
 import 'package:flutter_contact_bloc/models/contact_model.dart';
+import 'package:flutter_contact_bloc/widgets/loader.dart';
 
 class ContactUpdatePage extends StatefulWidget {
   final ContactModel contato;
@@ -76,24 +79,26 @@ class _ContactUpdatePageState extends State<ContactUpdatePage> {
                 onPressed: () {
                   final validade = _formKey.currentState?.validate() ?? false;
                   if (validade) {
-                    // context.read<ContactRegisterBloc>().add(
-                    //       ContactRegisterEvent.save(
-                    //         name: _nameEC.text,
-                    //         email: _emailEC.text,
-                    //       ),
-                    //     );
+                    
+                    context.read<ContactUpdateBloc>().add(
+                          ContactUpdateEvent.save(
+                            id: widget.contato.id!,
+                            email: _emailEC.text, 
+                            name: _nameEC.text,
+                          ),
+                        );
                   }
                 },
                 child: const Text("Salvar"),
               ),
-              // Loader<ContactRegisterBloc, ContactRegisterState>(
-              //   selector: (state) {
-              //     return state.maybeWhen(
-              //       loading: () => true,
-              //       orElse: () => false,
-              //     );
-              //   },
-              // ),
+              Loader<ContactUpdateBloc, ContactUpdateState>(
+                selector: (state) {
+                  return state.maybeWhen(
+                    loading: () => true,
+                    orElse: () => false,
+                  );
+                },
+              ),
             ],
           ),
         ),
