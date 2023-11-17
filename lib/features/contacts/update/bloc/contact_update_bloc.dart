@@ -33,7 +33,7 @@ class ContactUpdateBloc extends Bloc<ContactUpdateEvent, ContactUpdateState> {
     } catch (e, s) {
       log("Erro ao atualizar o contato", error: e, stackTrace: s);
       emit(
-          const ContactUpdateState.errod(message: 'Erro au atualizar contato'));
+          const ContactUpdateState.error(message: 'Erro au atualizar contato'));
     }
   }
 }

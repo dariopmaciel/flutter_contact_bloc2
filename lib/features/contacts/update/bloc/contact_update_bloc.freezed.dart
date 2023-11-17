@@ -259,7 +259,7 @@ mixin _$ContactUpdateState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String message) errod,
+    required TResult Function(String message) error,
     required TResult Function() success,
   }) =>
       throw _privateConstructorUsedError;
@@ -267,7 +267,7 @@ mixin _$ContactUpdateState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String message)? errod,
+    TResult? Function(String message)? error,
     TResult? Function()? success,
   }) =>
       throw _privateConstructorUsedError;
@@ -275,7 +275,7 @@ mixin _$ContactUpdateState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String message)? errod,
+    TResult Function(String message)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) =>
@@ -284,7 +284,7 @@ mixin _$ContactUpdateState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) errod,
+    required TResult Function(_Error value) error,
     required TResult Function(_Success value) success,
   }) =>
       throw _privateConstructorUsedError;
@@ -292,7 +292,7 @@ mixin _$ContactUpdateState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? errod,
+    TResult? Function(_Error value)? error,
     TResult? Function(_Success value)? success,
   }) =>
       throw _privateConstructorUsedError;
@@ -300,7 +300,7 @@ mixin _$ContactUpdateState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? errod,
+    TResult Function(_Error value)? error,
     TResult Function(_Success value)? success,
     required TResult orElse(),
   }) =>
@@ -365,7 +365,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String message) errod,
+    required TResult Function(String message) error,
     required TResult Function() success,
   }) {
     return initial();
@@ -376,7 +376,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String message)? errod,
+    TResult? Function(String message)? error,
     TResult? Function()? success,
   }) {
     return initial?.call();
@@ -387,7 +387,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String message)? errod,
+    TResult Function(String message)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) {
@@ -402,7 +402,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) errod,
+    required TResult Function(_Error value) error,
     required TResult Function(_Success value) success,
   }) {
     return initial(this);
@@ -413,7 +413,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? errod,
+    TResult? Function(_Error value)? error,
     TResult? Function(_Success value)? success,
   }) {
     return initial?.call(this);
@@ -424,7 +424,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? errod,
+    TResult Function(_Error value)? error,
     TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
@@ -479,7 +479,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String message) errod,
+    required TResult Function(String message) error,
     required TResult Function() success,
   }) {
     return loading();
@@ -490,7 +490,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String message)? errod,
+    TResult? Function(String message)? error,
     TResult? Function()? success,
   }) {
     return loading?.call();
@@ -501,7 +501,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String message)? errod,
+    TResult Function(String message)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) {
@@ -516,7 +516,7 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) errod,
+    required TResult Function(_Error value) error,
     required TResult Function(_Success value) success,
   }) {
     return loading(this);
@@ -527,7 +527,7 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? errod,
+    TResult? Function(_Error value)? error,
     TResult? Function(_Success value)? success,
   }) {
     return loading?.call(this);
@@ -538,7 +538,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? errod,
+    TResult Function(_Error value)? error,
     TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
@@ -594,7 +594,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'ContactUpdateState.errod(message: $message)';
+    return 'ContactUpdateState.error(message: $message)';
   }
 
   @override
@@ -619,10 +619,10 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String message) errod,
+    required TResult Function(String message) error,
     required TResult Function() success,
   }) {
-    return errod(message);
+    return error(message);
   }
 
   @override
@@ -630,10 +630,10 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String message)? errod,
+    TResult? Function(String message)? error,
     TResult? Function()? success,
   }) {
-    return errod?.call(message);
+    return error?.call(message);
   }
 
   @override
@@ -641,12 +641,12 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String message)? errod,
+    TResult Function(String message)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) {
-    if (errod != null) {
-      return errod(message);
+    if (error != null) {
+      return error(message);
     }
     return orElse();
   }
@@ -656,10 +656,10 @@ class _$ErrorImpl implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) errod,
+    required TResult Function(_Error value) error,
     required TResult Function(_Success value) success,
   }) {
-    return errod(this);
+    return error(this);
   }
 
   @override
@@ -667,10 +667,10 @@ class _$ErrorImpl implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? errod,
+    TResult? Function(_Error value)? error,
     TResult? Function(_Success value)? success,
   }) {
-    return errod?.call(this);
+    return error?.call(this);
   }
 
   @override
@@ -678,12 +678,12 @@ class _$ErrorImpl implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? errod,
+    TResult Function(_Error value)? error,
     TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
-    if (errod != null) {
-      return errod(this);
+    if (error != null) {
+      return error(this);
     }
     return orElse();
   }
@@ -738,7 +738,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String message) errod,
+    required TResult Function(String message) error,
     required TResult Function() success,
   }) {
     return success();
@@ -749,7 +749,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String message)? errod,
+    TResult? Function(String message)? error,
     TResult? Function()? success,
   }) {
     return success?.call();
@@ -760,7 +760,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String message)? errod,
+    TResult Function(String message)? error,
     TResult Function()? success,
     required TResult orElse(),
   }) {
@@ -775,7 +775,7 @@ class _$SuccessImpl implements _Success {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) errod,
+    required TResult Function(_Error value) error,
     required TResult Function(_Success value) success,
   }) {
     return success(this);
@@ -786,7 +786,7 @@ class _$SuccessImpl implements _Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? errod,
+    TResult? Function(_Error value)? error,
     TResult? Function(_Success value)? success,
   }) {
     return success?.call(this);
@@ -797,7 +797,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? errod,
+    TResult Function(_Error value)? error,
     TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {

@@ -8,8 +8,10 @@ import 'package:flutter_contact_bloc/features/contacts/list/bloc/contact_list_bl
 import 'package:flutter_contact_bloc/features/contacts/list/contacts_list_page.dart';
 import 'package:flutter_contact_bloc/features/contacts/register/bloc/contact_register_bloc.dart';
 import 'package:flutter_contact_bloc/features/contacts/register/contact_register_page.dart';
+import 'package:flutter_contact_bloc/features/contacts/update/bloc/contact_update_bloc.dart';
 import 'package:flutter_contact_bloc/features/contacts/update/contact_update_page.dart';
 import 'package:flutter_contact_bloc/home/home_page.dart';
+import 'package:flutter_contact_bloc/models/contact_model.dart';
 import 'package:flutter_contact_bloc/repositories/contacts_repository.dart';
 
 void main() {
@@ -17,7 +19,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}):super(key: key);
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     //Envolvendo o 'MaterialApp' com o 'RepositoryProvider', disponibiliza-se o 'ContactsRepository()' para toda a árvore de componentes. Sendo necessário ser recebido em 'ContactListBloc'
@@ -54,7 +56,19 @@ class MyApp extends StatelessWidget {
                     contactRepository: context.read(),
                   ),
               child: const ContactRegisterPage()),
-          // '/contact/update': (context) => ContactUpdatePage(),
+          '/contact/update': (context) {
+            //
+            final contato =
+                ModalRoute.of(context)!.settings.arguments as ContactModel;
+            //
+            return BlocProvider(
+              create: (context) =>
+                  ContactUpdateBloc(contactRepository: context.read()),
+              child: ContactUpdatePage(
+                contato: contato,
+              ),
+            );
+          }
         },
       ),
     );
