@@ -19,7 +19,7 @@ class ContactListBloc extends Bloc<ContactListEvent, ContactListState> {
       : _repository = repository,
         super(ContactListState.initial()) {
     on<_ContactListEventFindAll>(_findAll);
-    on<_Delete>(_deleteById);
+    // on<_Delete>(_deleteById);
   }
 
   Future<void> _findAll(
@@ -36,10 +36,10 @@ class ContactListBloc extends Bloc<ContactListEvent, ContactListState> {
     }
   }
 
-  Future<FutureOr<void>> _deleteById(
-      _Delete event, Emitter<ContactListState> emit) async {
-    emit(ContactListState.loading());
-    await _repository.delete(event.id);
-    add(const ContactListEvent.findAll());
-  }
+  // Future<FutureOr<void>> _deleteById(
+  //     _Delete event, Emitter<ContactListState> emit) async {
+  //   emit(ContactListState.loading());
+  //   await _repository.delete(event.id);
+  //   add(const ContactListEvent.findAll());
+  // }
 }
