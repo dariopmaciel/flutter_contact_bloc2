@@ -29,7 +29,7 @@ class ContactsRepository {
 
 //   Future<List<ContactModel>> findAll() async {
 //     try {
-//       final response = await _dio.get('http://10.0.0.100:3031/contacts');
+//       final response = await _dio.get('http://10.0.0.103:3031/contacts');
 
 //       return response.data
 //               ?.map<ContactModel>((contact) => ContactModel.fromMap(contact))
@@ -44,7 +44,7 @@ class ContactsRepository {
 
 //   Future<void> create(ContactModel model) async {
 //     try {
-//       await _dio.post("http://10.0.0.100:3031/contacts", data: model.toMap());
+//       await _dio.post("http://10.0.0.103:3031/contacts", data: model.toMap());
 //     } catch (e) {
 //       print('Erro ao criar contato: $e');
 //       throw Exception('Erro ao criar contato');
@@ -53,7 +53,7 @@ class ContactsRepository {
 
 //   Future<void> update(ContactModel model) async {
 //     try {
-//       await _dio.put("http://10.0.0.100:3031/contacts/${model.id}",
+//       await _dio.put("http://10.0.0.103:3031/contacts/${model.id}",
 //           data: model.toMap());
 //     } catch (e) {
 //       print('Erro ao atualizar contato: $e');
@@ -63,7 +63,7 @@ class ContactsRepository {
 
 //   Future<void> delete(ContactModel model) async {
 //     try {
-//       await _dio.delete("http://10.0.0.100:3031/contacts/${model.id}");
+//       await _dio.delete("http://10.0.0.103:3031/contacts/${model.id}");
 //     } catch (e) {
 //       print('Erro ao excluir contato: $e');
 //       throw Exception('Erro ao excluir contato');
