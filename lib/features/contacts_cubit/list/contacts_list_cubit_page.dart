@@ -10,8 +10,12 @@ class ContactsListCubitPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Contact Cubit'),
+      appBar: AppBar(title: const Text('Contact Cubit')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          //
+        },
+        child: const Icon(Icons.add),
       ),
       body: RefreshIndicator(
         onRefresh: () => context.read<ContactListCubit>().findAll(),
@@ -44,7 +48,9 @@ class ContactsListCubitPage extends StatelessWidget {
                         itemBuilder: (_, index) {
                           final contact = contacts[index];
                           return ListTile(
-                            onLongPress: ()=> context.read<ContactListCubit>().deleteByModel(contact),
+                            onLongPress: () => context
+                                .read<ContactListCubit>()
+                                .deleteByModel(contact),
                             title: Text(contact.name),
                             subtitle: Text(contact.email),
                           );

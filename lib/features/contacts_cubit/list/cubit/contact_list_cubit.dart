@@ -35,4 +35,9 @@ class ContactListCubit extends Cubit<ContactListCubitState> {
     final delete = await _repository.delete(model);
     findAll();
   }
+
+
+  // Future<void> update(){
+
+  // }
 }
