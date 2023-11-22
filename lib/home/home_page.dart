@@ -24,9 +24,7 @@ class HomePage extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).pushNamed('/bloc/bloc_example');
                       },
-                      child: ButtonCard(
-                        name: 'Bloc Example',
-                      ),
+                      child: ButtonCard(name: 'Bloc Example'),
                     ),
                     InkWell(
                       onTap: () {
@@ -45,7 +43,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                         Navigator.of(context).pushNamed('/contact/list');
+                        Navigator.of(context).pushNamed('/contact/list');
                       },
                       child: ButtonCard(
                         name: 'Contact List',
@@ -53,7 +51,7 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                         Navigator.of(context).pushNamed('/bloc/bloc_example');
+                        Navigator.of(context).pushNamed('/contact/cubit');
                       },
                       child: ButtonCard(
                         name: 'Contact Cubit',

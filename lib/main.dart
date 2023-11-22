@@ -10,6 +10,7 @@ import 'package:flutter_contact_bloc/features/contacts/register/bloc/contact_reg
 import 'package:flutter_contact_bloc/features/contacts/register/contact_register_page.dart';
 import 'package:flutter_contact_bloc/features/contacts/update/bloc/contact_update_bloc.dart';
 import 'package:flutter_contact_bloc/features/contacts/update/contact_update_page.dart';
+import 'package:flutter_contact_bloc/features/contacts_cubit/list/contacts_cubit_page.dart';
 
 import 'package:flutter_contact_bloc/home/home_page.dart';
 import 'package:flutter_contact_bloc/models/contact_model.dart';
@@ -59,10 +60,8 @@ class MyApp extends StatelessWidget {
                   ),
               child: const ContactRegisterPage()),
           '/contact/update': (context) {
-            //
             final contato =
                 ModalRoute.of(context)!.settings.arguments as ContactModel;
-            //
             return BlocProvider(
               create: (context) =>
                   ContactUpdateBloc(contactRepository: context.read()),
@@ -71,6 +70,7 @@ class MyApp extends StatelessWidget {
               ),
             );
           },
+          '/contact/cubit': (context) => ContactsCubitPage(),
         },
       ),
     );
