@@ -10,8 +10,10 @@ import 'package:flutter_contact_bloc/features/contacts/register/bloc/contact_reg
 import 'package:flutter_contact_bloc/features/contacts/register/contact_register_page.dart';
 import 'package:flutter_contact_bloc/features/contacts/update/bloc/contact_update_bloc.dart';
 import 'package:flutter_contact_bloc/features/contacts/update/contact_update_page.dart';
+
 import 'package:flutter_contact_bloc/home/home_page.dart';
 import 'package:flutter_contact_bloc/models/contact_model.dart';
+
 import 'package:flutter_contact_bloc/repositories/contacts_repository.dart';
 
 void main() {
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
           '/contact/list': (context) => BlocProvider(
               create: (_) => ContactListBloc(
                   repository: context.read<ContactsRepository>())
-                ..add(const ContactListEvent.findAll()),
+                ..add(ContactListEvent.findAll()),
               child: const ContactsListPage()),
           // '/contact/register': (context) => const ContactRegisterPage(),
           '/contact/register': (context) => BlocProvider(
@@ -68,7 +70,7 @@ class MyApp extends StatelessWidget {
                 contato: contato,
               ),
             );
-          }
+          },
         },
       ),
     );

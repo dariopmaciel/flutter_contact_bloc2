@@ -1,14 +1,1 @@
-{
-    "contacts": [
-        {
-            "id": 2,
-            "name": "ffffsdfsdfsdfsf",
-            "email": "ffhfsdfsdf4rrrrrrr"
-        },
-        {
-            "id": 3,
-            "name": "finalizando alterado",
-            "email": "finalizando alterado"
-        }
-    ]
-}
+{"contacts":[{"id":1,"name":"ffffsdfsdfsdfsf","email":"ffhfsdfsdf4rrrrrrr"},{"id":2,"name":"finalizando alterado","email":"finalizando alterado"},{"id":3,"name":"ASDASDAS","email":"SSSSSSS"}]}

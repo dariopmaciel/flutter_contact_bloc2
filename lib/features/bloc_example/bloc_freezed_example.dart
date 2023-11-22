@@ -69,7 +69,7 @@ class BlocFreezedExample extends StatelessWidget {
               );
             },
             builder: (_, names) {
-              print('build Names!!!!!');
+              // print('build Names!!!!!');
               return ListView.builder(
                 itemCount: names.length,
                 shrinkWrap: true,

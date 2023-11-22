@@ -29,7 +29,7 @@ class BlocExample extends StatelessWidget {
           return false;
         },
         listener: (BuildContext context, state) async {
-          print('Estado alterado após 5 segundos!!!!');
+          // print('Estado alterado após 5 segundos!!!!');
           if (state is ExampleStateData) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
@@ -91,12 +91,12 @@ class BlocExample extends StatelessWidget {
                   return [];
                 }
               },
-              builder: (context, nomes) {
+              builder: (_, contacts) {
                 return ListView.builder(
                   shrinkWrap: true,
-                  itemCount: nomes.length,
+                  itemCount: contacts.length,
                   itemBuilder: (context, index) {
-                    final names = nomes[index];
+                    final names = contacts[index];
                     return ListTile(
                       onTap: () {
                         context

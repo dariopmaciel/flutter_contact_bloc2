@@ -30,7 +30,8 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed('/bloc/freezed_example');
+                        Navigator.of(context)
+                            .pushNamed('/bloc/freezed_example');
                       },
                       child: ButtonCard(
                         name: 'Example Freezed',
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed('/contact/list');
+                         Navigator.of(context).pushNamed('/contact/list');
                       },
                       child: ButtonCard(
                         name: 'Contact List',
@@ -52,7 +53,7 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed('/bloc/example');
+                         Navigator.of(context).pushNamed('/bloc/bloc_example');
                       },
                       child: ButtonCard(
                         name: 'Contact Cubit',
