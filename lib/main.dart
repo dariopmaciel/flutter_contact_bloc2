@@ -10,7 +10,8 @@ import 'package:flutter_contact_bloc/features/contacts/register/bloc/contact_reg
 import 'package:flutter_contact_bloc/features/contacts/register/contact_register_page.dart';
 import 'package:flutter_contact_bloc/features/contacts/update/bloc/contact_update_bloc.dart';
 import 'package:flutter_contact_bloc/features/contacts/update/contact_update_page.dart';
-import 'package:flutter_contact_bloc/features/contacts_cubit/list/contacts_cubit_page.dart';
+import 'package:flutter_contact_bloc/features/contacts_cubit/list/contacts_list_cubit_page.dart';
+import 'package:flutter_contact_bloc/features/contacts_cubit/list/cubit/contact_list_cubit.dart';
 
 import 'package:flutter_contact_bloc/home/home_page.dart';
 import 'package:flutter_contact_bloc/models/contact_model.dart';
@@ -70,7 +71,10 @@ class MyApp extends StatelessWidget {
               ),
             );
           },
-          '/contact/cubit': (context) => ContactsCubitPage(),
+          '/contact/cubit': (context) => BlocProvider(
+              create: (BuildContext context) =>
+                  ContactListCubit(repository: context.read())..findAll(),
+              child: const ContactsListCubitPage()),
         },
       ),
     );
