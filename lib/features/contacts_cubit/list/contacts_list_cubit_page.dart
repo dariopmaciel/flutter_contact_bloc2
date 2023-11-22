@@ -13,7 +13,7 @@ class ContactsListCubitPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Contact Cubit')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //
+          Navigator.of(context).pushNamed('/contact/cubit/register');
         },
         child: const Icon(Icons.add),
       ),

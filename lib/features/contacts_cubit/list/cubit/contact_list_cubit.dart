@@ -36,8 +36,29 @@ class ContactListCubit extends Cubit<ContactListCubitState> {
     findAll();
   }
 
+  Future<void> createContact(ContactModel newContact) async {
+    try {
+      emit(ContactListCubitState.loading());
+      await _repository.create(
+          newContact); // Suponha que haja um método `create` no seu repositório
+      final contacts = await _repository.findAll();
+      emit(ContactListCubitState.data(contacts: contacts));
+    } catch (e, s) {
+      log("Erro ao criar contato", error: e, stackTrace: s);
+      emit(ContactListCubitState.error(error: "Erro ao criar contato"));
+    }
+  }
 
-  // Future<void> update(){
-
+  // Future<void> _updateContact(
+  //     _UpdateContact event, Emitter<ContactListState> emit) async {
+  //   try {
+  //     emit(ContactListState.loading());
+  //     await _repository.update(event.updatedContact);
+  //     final contacts = await _repository.findAll();
+  //     emit(ContactListState.data(contacts: contacts));
+  //   } catch (e, s) {
+  //     log("Erro ao atualizar contato", error: e, stackTrace: s);
+  //     emit(ContactListState.error(error: "Erro ao Atualizar o Contato"));
+  //   }
   // }
 }

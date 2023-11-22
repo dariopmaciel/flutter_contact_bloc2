@@ -35,7 +35,7 @@ class ContactListBloc extends Bloc<ContactListEvent, ContactListState> {
     }
   }
 
-  Future<FutureOr<void>> _deleteById(
+  Future<void> _deleteById(
       _Delete event, Emitter<ContactListState> emit) async {
     emit(ContactListState.loading());
     await _repository.delete(event.id);
