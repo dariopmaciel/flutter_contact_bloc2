@@ -44,7 +44,7 @@ class ContactsListCubitPage extends StatelessWidget {
                         itemBuilder: (_, index) {
                           final contact = contacts[index];
                           return ListTile(
-                            onTap: ()=> context.read<ContactListCubit>().deleteByModel(contact),
+                            onLongPress: ()=> context.read<ContactListCubit>().deleteByModel(contact),
                             title: Text(contact.name),
                             subtitle: Text(contact.email),
                           );
