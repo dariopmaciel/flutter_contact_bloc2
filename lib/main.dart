@@ -12,7 +12,7 @@ import 'package:flutter_contact_bloc/features/contacts/update/bloc/contact_updat
 import 'package:flutter_contact_bloc/features/contacts/update/contact_update_page.dart';
 import 'package:flutter_contact_bloc/features/contacts_cubit/list/contacts_list_cubit_page.dart';
 import 'package:flutter_contact_bloc/features/contacts_cubit/list/cubit/contact_list_cubit.dart';
-import 'package:flutter_contact_bloc/features/contacts_cubit/register/cubit/contact_cubit_register_page.dart';
+import 'package:flutter_contact_bloc/features/contacts_cubit/register/contact_cubit_register_page.dart';
 
 import 'package:flutter_contact_bloc/home/home_page.dart';
 import 'package:flutter_contact_bloc/models/contact_model.dart';
