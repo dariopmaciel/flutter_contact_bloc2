@@ -25,9 +25,7 @@ class _ContactCubitRegisterPageState extends State<ContactCubitRegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Register Cubit'),
-        ),
+        appBar: AppBar(title: const Text('Register Cubit')),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Form(
@@ -62,15 +60,15 @@ class _ContactCubitRegisterPageState extends State<ContactCubitRegisterPage> {
                 const SizedBox(height: 35),
                 ElevatedButton(
                   onPressed: () {
-                    final validade = _formKey.currentState?.validate() ?? false;
-                    if (validade) {
-                      context.read<ContactRegisterBloc>().add(
-                            ContactRegisterEvent.save(
-                              name: _nomeEC.text,
-                              email: _emailEC.text,
-                            ),
-                          );
-                    }
+                    // final validade = _formKey.currentState?.validate() ?? false;
+                    // if (validade) {
+                    //   context.read<ContactRegisterBloc>().add(
+                    //         ContactRegisterEvent.save(
+                    //           name: _nomeEC.text,
+                    //           email: _emailEC.text,
+                    //         ),
+                    //       );
+                    // }
                   },
                   child: const Text("SALVAR"),
                 ),
