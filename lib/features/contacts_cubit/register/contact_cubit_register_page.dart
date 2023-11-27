@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_contact_bloc/features/contacts/register/bloc/contact_register_bloc.dart';
 
 class ContactCubitRegisterPage extends StatefulWidget {
   const ContactCubitRegisterPage({super.key});
