@@ -8,10 +8,7 @@ import 'package:mocktail/mocktail.dart';
 class MockContactsRepository extends Mock implements ContactsRepository {}
 
 void main() {
-  // testWidgets('contact list cubit state ...', (tester) async {
-  //   // TODO: Implement test
-  // });
-  //declaração
+    //declaração
   late MockContactsRepository repository;
   late ContactListCubit cubit;
   late List<ContactModel> contacts;
