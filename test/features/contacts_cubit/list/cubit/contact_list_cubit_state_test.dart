@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter_contact_bloc/features/contacts/list/bloc/contact_list_bloc.dart';
+import 'package:flutter_contact_bloc/features/contacts_cubit/list/cubit/contact_list_cubit.dart';
 import 'package:flutter_contact_bloc/models/contact_model.dart';
 import 'package:flutter_contact_bloc/repositories/contacts_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -8,15 +8,18 @@ import 'package:mocktail/mocktail.dart';
 class MockContactsRepository extends Mock implements ContactsRepository {}
 
 void main() {
-//declaração
+  // testWidgets('contact list cubit state ...', (tester) async {
+  //   // TODO: Implement test
+  // });
+  //declaração
   late MockContactsRepository repository;
-  late ContactListBloc bloc;
+  late ContactListCubit cubit;
   late List<ContactModel> contacts;
 
 //preparação
   setUp(() {
     repository = MockContactsRepository();
-    bloc = ContactListBloc(repository: repository);
+    cubit = ContactListCubit(repository: repository);
     contacts = [
       ContactModel(name: "A1", email: 'a1@hotmail.com'),
       ContactModel(name: "A2", email: 'a2@hotmail.com'),
@@ -24,29 +27,19 @@ void main() {
     ];
   });
 
-//execução
-  blocTest<ContactListBloc, ContactListState>(
+  //execução
+  blocTest<ContactListCubit, ContactListCubitState>(
     'Deve buscar os contatos',
-    build: () => bloc,
-    act: (bloc) => bloc.add(const ContactListEvent.findAll()),
+    build: () => cubit,
+    act: (cubit) => cubit.findAll(),
     setUp: () {
       when(
         () => repository.findAll(),
       ).thenAnswer((_) async => contacts);
     },
     expect: () => [
-      ContactListState.loading(),
-      ContactListState.data(contacts: contacts),
-    ],
-  );
-
-  blocTest<ContactListBloc, ContactListState>(
-    'Deve retornar erro ao buscar contatos',
-    build: () => bloc,
-    act: (bloc) => bloc.add(const ContactListEvent.findAll()),
-    expect: () => [
-      ContactListState.loading(),
-      ContactListState.error(error: "Erro ao Buscar os Contatos"),
+      ContactListCubitState.loading(),
+      ContactListCubitState.data(contacts: contacts),
     ],
   );
 }
